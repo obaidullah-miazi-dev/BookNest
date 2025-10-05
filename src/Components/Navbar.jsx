@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <div className=" bg-white">
             <Container>
-                <nav className="px-8 py-4 flex justify-between items-center mt-5">
+                <nav className="py-4 flex justify-between items-center mt-5">
                     <a href='body' className="md:text-3xl text-sm font-bold cursor-pointer">Book Nest</a>
                     <div className='md:flex hidden items-center gap-12 font-semibold text-lg'>
                         <a href="#home" className="text-gray-600">
