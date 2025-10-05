@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import Book from './Book';
 
 const Books = ({data}) => {
-    console.log(data);
+    // console.log(data);
     return (
        <>
        <h1 className='text-center text-4xl font-bold mb-8 mt-16'>All Books</h1>

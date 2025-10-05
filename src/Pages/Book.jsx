@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Book = ({ book }) => {
-    console.log(book);
+    // console.log(book);
     return (
         <>
             <Link to={`bookDetails/${book.bookId}`}>
