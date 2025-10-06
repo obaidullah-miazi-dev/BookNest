@@ -1,24 +1,29 @@
-const getStoredBook = () =>{
+import Swal from "sweetalert2";
+
+const getStoredBook = () => {
     const storedBookSTR = localStorage.getItem('readList');
-    if(storedBookSTR){
-       const storedBookData = JSON.parse(storedBookSTR);
+    if (storedBookSTR) {
+        const storedBookData = JSON.parse(storedBookSTR);
         return storedBookData
     }
-    else{
+    else {
         return [];
     }
 }
 
-const addToStoredDB = (id) =>{
+const addToStoredDB = (id) => {
     const storedBookData = getStoredBook()
-    if(storedBookData.includes(id)){
-        alert('already exist this book')
+    if (storedBookData.includes(id)) {
+        Swal.fire({
+            icon: "error",
+            title: "This Book already Exist",
+        });
     }
-    else{
+    else {
         storedBookData.push(id)
         const data = JSON.stringify(storedBookData)
-        localStorage.setItem('readList',data)
+        localStorage.setItem('readList', data)
     }
 }
 
-export{addToStoredDB,getStoredBook};
+export { addToStoredDB, getStoredBook };

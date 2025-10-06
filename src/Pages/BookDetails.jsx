@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import Container from '../Components/Container';
 import { addToStoredDB } from '../Utilities/addToDB';
+import Swal from 'sweetalert2'
 
 const BookDetails = () => {
     const { id } = useParams()
@@ -10,7 +11,11 @@ const BookDetails = () => {
     const singleBookData = data.find(book => book.bookId === bookId)
     const { bookName, image, author, category, review, tags, totalPages, yearOfPublishing, publisher, rating } = singleBookData
 
-    const handleMarkAsRead = (id) =>{
+    const handleMarkAsRead = (id) => {
+        Swal.fire({
+            title: "Marked as Read",
+            icon: "success"
+        });
         addToStoredDB(id)
     }
     return (
